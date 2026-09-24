@@ -1,0 +1,4 @@
+interface:
+  display_name: "AGENTS.md Maintenance"
+  short_description: "Edit and audit AGENTS.md files"
+  default_prompt: "Use $agents-md to review and improve this AGENTS.md file."
