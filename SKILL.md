@@ -1,9 +1,9 @@
 ---
-name: agents-md-maintenance
+name: agents-md-edit
 description: Maintain global and project AGENTS.md files by reviewing, updating, organizing, optimizing, and compressing rules and document indexes. Use for rule changes, duplication, misplaced guidance, bloated default context, or whole-file cleanup.
 ---
 
-# AGENTS.md Maintenance
+# AGENTS.md Edit
 
 Make the default context small enough to use and complete enough to guide decisions. Preserve effective behavior, not inherited wording or layout. A shorter file is useful only when its rules remain findable, coherent, and correct. Read [decision criteria](references/decision-criteria.md) for semantic editing and [audit scope](references/audit.md) before interpreting script results.
 

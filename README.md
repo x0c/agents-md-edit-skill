@@ -1,6 +1,6 @@
 **Languages:** English | [简体中文](README.zh-CN.md)
 
-# agents-md-maintenance
+# agents-md-edit
 
 An agent skill for reviewing, editing, and compacting global or project `AGENTS.md` files. It groups rules by the decisions they govern, removes stale or recoverable text, and keeps the instructions an agent needs before it can follow the document index. Structural checks help catch broken links; a human or coordinator still reviews behavior.
 
@@ -9,17 +9,17 @@ An agent skill for reviewing, editing, and compacting global or project `AGENTS.
 Requires Node.js for the installer. This command installs the skill for supported coding agents on macOS, Linux, or Windows:
 
 ```sh
-npx skills add x0c/agents-md-skill --skill agents-md-maintenance -g -y
+npx skills add x0c/agents-md-skill --skill agents-md-edit -g -y
 ```
 
 The skill's audit helper requires Python 3. No service or paid API is needed.
 
 ## Use
 
-Ask your coding agent to use `agents-md-maintenance`:
+Ask your coding agent to use `agents-md-edit`:
 
 ```text
-Use the agents-md-maintenance skill to review and compact this repository's AGENTS.md.
+Use the agents-md-edit skill to review and compact this repository's AGENTS.md.
 Read the whole file, preserve effective rules and exceptions, and check its document links.
 ```
 
