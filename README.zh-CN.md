@@ -9,7 +9,7 @@
 安装工具需要 Node.js。下面一条命令可在 macOS、Linux 或 Windows 上为兼容的 Coding Agent 安装此 skill：
 
 ```sh
-npx skills add x0c/agents-md-skill --skill agents-md-edit -g -y
+npx skills add x0c/agents-md-edit-skill --skill agents-md-edit -g -y
 ```
 
 附带的审计脚本需要 Python 3；无需服务或付费 API。
@@ -32,7 +32,7 @@ Read the whole file, preserve effective rules and exceptions, and check its docu
 - 新 Agent 能否通过文档索引找到所需细节？
 - 常驻上下文是否减少，同时不损害决策？
 
-内附的 `scripts/audit.py` 只检查链接和结构；检查通过不代表规则含义完全正确。如果发现 skill 处理不当，请[提交 issue](https://github.com/x0c/agents-md-skill/issues)，附上脱敏后的改前改后示例，以及受影响的决策。
+内附的 `scripts/audit.py` 只检查链接和结构；检查通过不代表规则含义完全正确。如果发现 skill 处理不当，请[提交 issue](https://github.com/x0c/agents-md-edit-skill/issues)，附上脱敏后的改前改后示例，以及受影响的决策。
 
 ## 许可证
 

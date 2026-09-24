@@ -9,7 +9,7 @@ An agent skill for reviewing, editing, and compacting global or project `AGENTS.
 Requires Node.js for the installer. This command installs the skill for supported coding agents on macOS, Linux, or Windows:
 
 ```sh
-npx skills add x0c/agents-md-skill --skill agents-md-edit -g -y
+npx skills add x0c/agents-md-edit-skill --skill agents-md-edit -g -y
 ```
 
 The skill's audit helper requires Python 3. No service or paid API is needed.
@@ -32,7 +32,7 @@ You can also request a specific rule edit or a read-only review. The skill disti
 - Can the document index lead a fresh agent to the detail it needs?
 - Did the rewrite reduce loaded context without making decisions worse?
 
-The included `scripts/audit.py` checks links and structure. Its clean result does not prove that the edited rules retain their meaning. If you find a case where the skill behaves badly, [open an issue](https://github.com/x0c/agents-md-skill/issues) with a sanitized before/after example and the missed decision.
+The included `scripts/audit.py` checks links and structure. Its clean result does not prove that the edited rules retain their meaning. If you find a case where the skill behaves badly, [open an issue](https://github.com/x0c/agents-md-edit-skill/issues) with a sanitized before/after example and the missed decision.
 
 ## License
 
