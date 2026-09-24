@@ -23,7 +23,7 @@ Use the agents-md skill to review and compact this repository's AGENTS.md.
 Read the whole file, preserve effective rules and exceptions, and check its document links.
 ```
 
-You can also request a specific rule edit or a read-only review. The skill distinguishes targeted work from a full cleanup and calls for a dedicated writer subagent when the agent environment supports one.
+You can also request a specific rule edit or a read-only review. The skill distinguishes targeted work from a full cleanup; delegation is optional.
 
 ## What to test
 

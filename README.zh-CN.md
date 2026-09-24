@@ -23,7 +23,7 @@ Use the agents-md skill to review and compact this repository's AGENTS.md.
 Read the whole file, preserve effective rules and exceptions, and check its document links.
 ```
 
-也可以只要求修改一条规则，或进行只读评审。Skill 会区分局部修改与全文整理；运行环境支持时，会要求由专门的子代理执笔。
+也可以只要求修改一条规则，或进行只读评审。Skill 会区分局部修改与全文整理；是否委派由执行 Agent 自行判断。
 
 ## 测试重点
 
