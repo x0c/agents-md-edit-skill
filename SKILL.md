@@ -1,5 +1,5 @@
 ---
-name: agents-md
+name: agents-md-maintenance
 description: Maintain global and project AGENTS.md files by reviewing, updating, organizing, optimizing, and compressing rules and document indexes. Use for rule changes, duplication, misplaced guidance, bloated default context, or whole-file cleanup.
 ---
 
