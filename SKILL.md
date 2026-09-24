@@ -1,6 +1,6 @@
 ---
 name: agents-md
-description: Review, edit, or restructure global and project AGENTS.md instruction files. Use for rule changes, instruction audits, duplication, misplaced rules, bloated default context, and whole-file cleanup.
+description: Maintain global and project AGENTS.md files by reviewing, updating, organizing, optimizing, and compressing rules and document indexes. Use for rule changes, duplication, misplaced guidance, bloated default context, or whole-file cleanup.
 ---
 
 # AGENTS.md Maintenance
