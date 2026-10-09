@@ -7,3 +7,5 @@ The report includes file size and heading counts as descriptive measurements, po
 The auditor recognizes headings that identify an index or navigation section, including localized headings. It checks local Markdown links in index tables and explicit path references in the first table column, including a bare relative filename. Prose outside index tables is ignored, so mentioning a filename in a description does not create a link check. External URLs and fragment-only links are skipped.
 
 The script cannot judge whether a rule is useful, correct, supported, well placed, or semantically duplicated. Treat findings as leads for human review. A repeated item may be intentional; a clean report is not proof of document quality.
+
+The `coverage` field states whether local navigation was assessed. Zero entries remain unassessed, not verified. A file named `*_INDEX.md` with no recognized local entries reports `navigation_not_assessed` and exits with a finding; standalone policy documents may legitimately have no index.

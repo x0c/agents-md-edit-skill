@@ -190,10 +190,13 @@ def audit(path: Path) -> dict[str, object]:
         for path, references in all_index_paths.items()
         if len({item["index_line"] for item in references}) > 1
     )
+    if target.stem.upper().endswith("_INDEX") and not entries:
+        findings.append({"kind": "navigation_not_assessed", "message": "Index document has no recognized local navigation entries; inspect headings and coverage."})
     return {
         "file": str(target),
         "measurements": {"lines": len(lines), "characters": len(text), "headings": len(headings), "index_sections": len(index_starts)},
         "index_entries": entries,
+        "coverage": {"navigation_assessed": bool(entries), "local_links_checked": len(entries)},
         "managed_regions": managed_regions,
         "findings": findings,
     }
@@ -215,6 +218,8 @@ def main() -> int:
         print(f"File: {report['file']}")
         print("Measurements: " + ", ".join(f"{key}={value}" for key, value in report["measurements"].items()))
         print(f"Index references: {len(report['index_entries'])}; managed regions: {len(report['managed_regions'])}")
+        if not report["coverage"]["navigation_assessed"]:
+            print("Navigation not assessed: no recognized local index entries.")
         findings = report["findings"]
         if not findings:
             print("Findings: none")

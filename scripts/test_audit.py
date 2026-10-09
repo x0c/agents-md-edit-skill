@@ -113,6 +113,24 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(report["measurements"]["index_sections"], 1)
         self.assertEqual(len(report["index_entries"]), 1)
 
+    def test_unrecognized_index_navigation_is_not_a_clean_pass(self) -> None:
+        target = self.root / "CLIENT_UI_INDEX.md"
+        target.write_text("# UI\n\n## 用户原话 / 症状 → 读哪篇\n| Symptom | [Guide](docs/GUIDE.md) |\n", encoding="utf-8")
+        report = audit.audit(target)
+        self.assertFalse(report["coverage"]["navigation_assessed"])
+        self.assertIn("navigation_not_assessed", [item["kind"] for item in report["findings"]])
+        result = subprocess.run([sys.executable, audit.__file__, str(target), "--json"], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 1, result.stderr)
+
+    def test_document_without_navigation_reports_the_coverage_limit(self) -> None:
+        self.write_target("# Rules\n\nA standalone policy.\n")
+        report = audit.audit(self.target)
+        self.assertFalse(report["coverage"]["navigation_assessed"])
+        self.assertEqual(report["findings"], [])
+        result = subprocess.run([sys.executable, audit.__file__, str(self.target)], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Navigation not assessed", result.stdout)
+
     def test_symlink_and_managed_region_are_read_only_and_resolved(self) -> None:
         link = self.root / "docs" / "LINK.md"
         try:

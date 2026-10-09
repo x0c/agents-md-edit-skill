@@ -1,28 +1,34 @@
-# Decision Criteria
+# Decision criteria
 
-Judge an instruction by the future decision it changes. The unit of preservation is an effective behavior with its applicable boundary, not a sentence, paragraph, heading, or historical explanation.
+The unit of preservation is an effective future behavior with its scope and exceptions, not inherited sentences or layout.
 
-## Rule value
+## Value and placement
 
-- **Action:** What would an agent do differently with this instruction? If nothing changes, remove it from default instructions or retain it as background in the appropriate record.
-- **Authority:** Does explicit user intent, a current source, or verified evidence support it? A past incident explains a rule but is not itself the rule.
-- **Scope:** Which tasks, systems, and people does it cover? Keep exceptions and values that change the answer. Generalize an example only if it preserves the same boundary; do not widen a narrow prohibition by accident.
-- **Owner:** Is this a default behavioral constraint, on-demand knowledge, a repeatable skill procedure, a generated contract, or transient task state? Put it with rules of the same domain and use pointers instead of restating its body.
-- **Recoverability:** Could a fresh agent find a current authority and reconstruct this descriptive fact with a few cheap calls? Test the path, not an imagined ability to infer it. A fact can be derivable while the instruction to look for it is not.
-- **Loading reliability:** Must this rule be present before an indexed document could reasonably be retrieved? Weigh scope, likelihood of retrieval, and the cost of omission. Rare but consequential prohibitions can justify default loading; narrow operating detail can live in linked documents when the index describes it well enough to be found.
+For each instruction establish:
 
-Dates, authorship labels, anecdotes, lists of equivalent technologies, repeated emphasis, and explanations are candidates for compression, not automatic deletions. A named exception, numeric threshold, exact command, or path remains when replacing it would change behavior. Headings are navigation aids, not a required wrapper for each rule. When used, their rules should govern one subject; a short file can use a flat rules section, separate from navigation or other specialized sections.
+- **Decision:** Which future action changes? Remove prose that changes none, or retain useful background in its owning record.
+- **Authority:** Is the rule supported by current user intent or verified evidence? Incidents explain rules; they do not independently create them.
+- **Scope:** Preserve applicable tasks, exceptions, numbers, paths and identifiers when they change the action. Do not generalize examples or narrow a category to one named instance.
+- **Owner:** Global rules govern cross-product behavior; project rules govern a product; skills own reusable procedures; shared guides own platform knowledge; generated contracts change through their source.
+- **Recoverability:** Test whether a fresh agent can find a current authority cheaply. Derivable facts can move; hidden constraints, rationale and instructions to consult that authority may still be necessary.
+- **Loading:** Keep default context when it changes decisions across most tasks, or when omission risks a consequential mistake before retrieval. Move narrow detail behind an accurate content summary only after checking that its destination actually owns it. A destination pointing back to AGENTS.md cannot replace the rule.
 
-Check recoverability before choosing the loading layer. Repository layout, ordinary commands, and copied signatures may be cheap to rediscover; hidden failure conditions, deliberate design choices, user constraints, and instructions to consult an authority often are not. Separate a rule's value from its residency: a valid, narrowly scoped rule can belong in a linked authority when its index summary reliably routes the relevant work. A lint or CI rule may still need an earlier agent directive when enforcement occurs after an avoidable risky action. When evidence is inconclusive, keep the behavior provisionally and identify what must be verified; uncertainty is not a permanent reason to keep verbose prose.
+Global placement asks who needs it, who can decide it and what omission breaks. Product names, dated handoffs, wave ledgers and product-specific requirements usually belong in product docs. Cross-product but infrequent knowledge belongs in indexed shared guides. Move the body rather than copy it; keep a pointer when it serves retrieval.
 
-## Structural review
+## Structure and compression
 
-For a full-file task, map the current headings, then independently design a domain tree around decision ownership. A tree that merely repeats the current headings cannot reveal bad ownership. Map each rule to keep, merge, move, route to an authority, remove, or leave unresolved; do not use a blanket preservation list in place of those decisions. Review relationships across distant sections, including policies repeated in closure checklists, broad miscellaneous sections, and generated blocks that overlap non-managed text. Move a rule across headings when its owner changes; preserve a pointer only where it genuinely helps retrieval. State concrete problems and representative rewritten rules across the whole file, not just a proposed outline or a link count.
+Map rules independently of old headings. Give each a disposition and concrete issue: repetition, misplacement, stale history, excessive enumeration or conflicting absolutes. Merge repeated requirements into one authority. Keep precision that changes behavior; remove redundant synonym lists, incident narrative and repeated emphasis. Historical dates and examples belong in the relevant record unless their identity still changes the decision.
 
-For a local task, scan headings and same-domain clauses, then inspect the affected authority. Expand scope only where an overlap or contradiction requires it. Do not invoke the local-work rule to narrow an explicitly requested whole-file cleanup.
+Group larger files by the decisions governed. Avoid miscellaneous umbrellas that hide unrelated rules, but do not force one heading per sentence in a small file. A preservation ledger is useful for coverage and cannot veto better organization. A full review covers all sections and interactions; a bounded change expands only for relevant overlaps or contradictions.
 
-## Behavioral review
+## Navigation
 
-Compare before and after on an ordinary task, a real exception, and an unrelated task. Ask whether the correct action is still selected, whether an exception has been lost, and whether an unrelated task now loads extra context or obeys an accidental new constraint. Inspect actual heading targets and authority links. The structural audit script detects broken navigation and marker imbalance; it does not detect misplaced, verbose, duplicated, stale, or conflicting instructions.
+Index entries describe contents and where authority lives. One shared relevance instruction establishes reading before governed decisions. Do not encode quotas, exhaustive trigger lists or prohibitions inside descriptions. Requirements should be found from an ordinary implementation request, not only after a symptom appears.
 
-Treat these criteria as hypotheses. If an edited rule performs badly, determine whether the cause is the wording, the document route, missing knowledge, execution, or tooling. Correct the cause rather than adding another universal prohibition.
+Authority has one body; references form a graph. Multiple useful routes to the same document are valid. Check zero-inbound orphans rather than treating every repeated reference as duplication. Direct links are the default; group only when navigation is hard to scan. Counts and line lengths prompt judgment rather than force restructuring.
+
+## Verification
+
+Compare the changed action, scope, timing and exceptions across ordinary, exception and unrelated tasks. Check actual link targets, generated markers and surrounding rules. If user-confirmed requirements supersede old evidence, reconcile the affected authority; mark unresolved conflicts instead of silently choosing.
+
+When a rule still fails, distinguish wording, navigation, execution and tool coverage. Correct the demonstrated cause instead of adding a universal prohibition per incident. Structural checks and compact stamps measure limited coverage; they do not prove semantic preservation or improved agent performance.
